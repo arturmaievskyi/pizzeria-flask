@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+     <h1 class="my-5">Online Pizzeria</h1>
+     <section class="container card-group ">
+          {% for item in items %}
+               <div class="card m-2 rounded" style="min-width: 18rem; max-width: 18rem;">
+               <img src="{{ url_for('static', filename='img/' + item[4]) }}" class="card-img-top rounded"\>
+               <div class="card-body">
+                 <h5 class="card-title">{{item[2]}}</h5>
+                 <p class="card-text">{{item[5]}} usd</p>
+                 <p class="card-size">{{item[6]}}</p>
+                 <a href="{{ url_for('item', item_id=item[0]) }}" class="btn btn-outline-dar">Buy</a>
+               </div>
+             </div>
+          {% endfor %}
+     </section>
+{% endblock content %}

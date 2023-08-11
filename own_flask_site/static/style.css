@@ -1,0 +1,11 @@
+footer{
+    background-color: black;
+}
+header{
+    background-color: aquamarine;
+}
+main{
+    border-style: double;
+    border-width: 1cm;
+    background-color: chartreuse;
+}
