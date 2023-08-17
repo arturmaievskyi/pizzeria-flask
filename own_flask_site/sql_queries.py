@@ -1,29 +1,56 @@
 import sqlite3
 
 
-class ShopDB:
+class ShopDB_Pizzas:
     def __init__(self):
         self.conn = None
         self.cursor = None
-        self.db_name = "shop.db"
+        self.db_name = "pizzas.db"
 
-    def open(self): #функція що відкриває базу даних
+    def open_pizzas(self): #функція що відкриває базу даних
         self.conn =sqlite3.connect(self.db_name) # з'єднання з базою даних (БД)
         self.cursor = self.conn.cursor() #курсор (посилання) на БД
 
-    def close(self): #функція що закриває базу даних
+    def close_pizzas(self): #функція що закриває базу даних
         self.cursor.close()
         self.conn.close()
-    def get_all(self):
-        self.open()
+    def get_all_pizzas(self):
+        self.open_pizzas()
         self.cursor.execute("SELECT * FROM pizza")
-        data = self.cursor.fetchall()
-        self.close()
-        return data
+        data_all_pizzas = self.cursor.fetchall()
+        self.close_pizzas()
+        return data_all_pizzas
 
-    def get_item(self, id):
-        self.open()
-        self.cursor.execute("SELECT * FROM WHERE id==(?)", [id])
-        data = self.cursor.fetchone()
-        self.close()
-        return data
+    def get_pizza(self, id):
+        self.open_pizzas()
+        self.cursor.execute("SELECT * FROM pizza WHERE id==(?)", [id])
+        data_one_pizza = self.cursor.fetchone()
+        self.close_pizzas()
+        return data_one_pizza
+class ShopDB_Drinks:
+    def __init__(self):
+        self.conn = None
+        self.cursor = None
+        self.db_name = "drinks.db"
+
+    def open_drinks(self): #функція що відкриває базу даних
+        self.conn =sqlite3.connect(self.db_name) # з'єднання з базою даних (БД)
+        self.cursor = self.conn.cursor() #курсор (посилання) на БД
+
+    def close_drinks(self): #функція що закриває базу даних
+        self.cursor.close()
+        self.conn.close()
+    def get_all_drinks(self):
+        self.open_drinks()
+        self.cursor.execute("SELECT * FROM drink")
+        data_all_drinks = self.cursor.fetchall()
+        self.close_drinks()
+        return data_all_drinks
+
+    def get_drink(self, id):
+        self.open_drinks()
+        self.cursor.execute("SELECT * FROM drink WHERE id==(?)", [id])
+        data_one_drink = self.cursor.fetchone()
+        self.close_drinks()
+        return data_one_drink
+    
