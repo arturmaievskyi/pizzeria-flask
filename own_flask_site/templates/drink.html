@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block head %}
-<title>{{title}}</title>
+<title>{{title}} | Drinks</title>
 {% endblock head %}
 {% block content %}
+<section class="container card-group">
 {% for item in drinks %}
-          <div class="card m-2 rounded" style="min-width: 18rem; max-width: 25rem;">
+          <div class="card m-2 rounded text-bg-info p-3" style="min-width: 18rem; max-width: 25rem;">
                <img src="{{url_for('static', filename='img/' + item[3])}}" class="card-img-top rounded">
                <div class="card-body" id="Drink">
                  <h5 class="card-title">{{item[2]}}</h5>
@@ -15,4 +16,5 @@
                </div>
           </div>
 {% endfor %}
+</section>
 {% endblock %}

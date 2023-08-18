@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="container py-5">
+<div class="container py-5 one_pizza">
     <div class="row">
     <div class="col-12 col-lg-6">
         <img src="{{ url_for('static', filename='img/' + pizza[4]) }}" alt="" class="rounded img-fluid">
@@ -13,7 +13,7 @@
         <h5>size: {{pizza[6]}}</h5>
         <h5>ID/IDIES {{pizza[7]}}</h5>
         <h5>About: {{pizza[3]}}</h5>
-        <a class="btn btn-primary" href="#" role="button">Buy</a>
+        <a class="btn btn-primary" href="new_order_pizza.html" role="button">Buy</a>
     </div>
     </div>
 </div>

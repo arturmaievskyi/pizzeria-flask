@@ -24,32 +24,32 @@ def pizzaria():
 @app.route("/pizza/<pizza_id>")
 def pizza(pizza_id):
     pizza_obj = db_pizzas.get_pizza(pizza_id)
-    return render_template('own_pizza.html', pizza = pizza_obj)
+    return render_template('own_pizza.html', title="Online Pizzeria", pizza = pizza_obj)
 
 
 @app.route("/drink/<drink_id>")
 def drink(drink_id):
     drink_obj = db_drinks.get_drink(drink_id)
-    return render_template('own_drink.html', drink = drink_obj)
+    return render_template('own_drink.html', title="Online Pizzeria", drink = drink_obj)
 
 
 @app.route("/templates/pizza.html")
 def pizzaPage():
     pizzas_obj = db_pizzas.get_all_pizzas()
     print(pizzas_obj)
-    return render_template('pizza.html',  pizzas = pizzas_obj)
+    return render_template('pizza.html', title="Online Pizzeria", pizzas = pizzas_obj)
 
 
 @app.route("/templates/drink.html")
 def drinkPage():
     drink_obj = db_drinks.get_all_drinks()
     print(drink_obj)
-    return render_template('drink.html',  drinks = drink_obj)
+    return render_template('drink.html',title="Online Pizzeria",  drinks = drink_obj)
 
 
 @app.route("/templates/about.html")
 def About():
-    return render_template("about.html")
+    return render_template("about.html", title="Online Pizzeria")
 
 
 if __name__ == "__main__":

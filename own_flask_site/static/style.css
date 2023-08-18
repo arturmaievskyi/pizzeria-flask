@@ -1,38 +1,11 @@
-header{
-    background-color: chocolate;
-    border-style: outset;
-    border-color: aquamarine;
-    border-radius: 10%;
-    border-width: 1cm;
-}main{
-    background-color: brown;
-    border-style: outset;
-    border-color: aquamarine;
-    border-radius: 10%;
-    border-width: 1cm;
-}footer{
-    background-color: chocolate;
-    border-style: outset;
-    border-color: aquamarine;
-    border-radius: 10%;
-    border-width: 1cm;
+.Welcome{
+    text-align: center;   
 }
-
-body{
-    border-style: double;
-    border-color: aqua;
-    border-width: 0.5cm;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+.List{
+    border-style: none;
+    background-color: rgb(80, 80, 255);
 }
-#Pizza{
-    border-style:solid;
-    border-radius: 20%;
-    border-color: cyan;
-    background-color: wheat;
-}
-#Drink{
-    border-style: solid;
-    border-color: brown;
-    background-color: aquamarine;
-    border-radius: 10%;
+.NavBar{
+    border-style: dashed;
+    
 }
