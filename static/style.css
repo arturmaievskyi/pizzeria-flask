@@ -1,0 +1,36 @@
+.Welcome{
+    text-align: center;   
+}
+.List{
+    border-style: none;
+    background-color: rgb(80, 80, 255);
+}
+.NavBar{
+    border-style: dashed;
+}
+.drink{
+    background-color: aliceblue;
+    border-style: double;
+}
+.pizza{
+    background-color: aliceblue;
+    border-style: double;
+}
+.Pizza{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    text-align: center;
+    color: lightseagreen;
+}
+.Drink{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style:initial;
+    text-align: center;
+    color: rgb(255, 0, 0);
+}
+.MyBtn{
+    background-color: aquamarine;
+}
+.card-body{
+    background-color: white;
+}

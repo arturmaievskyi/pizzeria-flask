@@ -1,0 +1,47 @@
+{% extends "base.html" %}    
+{% block content %}
+
+        <div class="container py-5 one_pizza">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <img src="{{ url_for('static', filename='img/' + pizza[4]) }}" alt="picture of pizza" class="rounded img-fluid">
+            </div>
+                <div class="col-12 col-lg-6">
+                    <h2 class="mr-5 ml-5 mb-5 mt-5">{{pizza[2]}}</h2>
+                    <h3>{{pizza[5]}} USD</h3>     
+                    <h5>size: {{pizza[6]}}</h5>
+                    <h5>About: {{pizza[3]}}</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-8 my-5">
+                <form action="" method="post">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Name</label>
+                        <input required name="name" type="text" class="form-control" id="exampleFormControlInput1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Email</label>
+                        <input required name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Mobile Phone</label>
+                        <input required name="phone" type="tel" class="form-control" id="exampleFormControlInput1" placeholder="+380(00)000000">
+                    </div>
+    
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Your city</label>
+                        <input required name="city" type="text" class="form-control" id="exampleFormControlInput1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Adress to order</label>
+                        <input required name="address" type="text" class="form-control" id="exampleFormControlInput1">
+                    </div>
+                    <button type="submit" class="btn btn-light my-btn">End new order</button>
+    
+                </form>
+            </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container py-5 one_drink">
+    <div class="row">
+    <div class="col-12 col-lg-6">
+        <img src="{{ url_for('static', filename='img/' + drink[3]) }}" alt="" class="rounded img-fluid">
+    </div>
+    <div class="col-12 col-lg-6">
+        <h2 class="mr-5 ml-5 mb-5 mt-5">{{drink[2]}}</h2>
+
+        <h3>{{drink[4]}} usd</h3>     
+        <h5> {{drink[5]}}</h5>
+        <a class="btn btn-primary" href="" role="button">Buy</a>
+    </div>
+    </div>
+</div>
+
+<form action="" method="post">
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Write your name:</label>
+        <textarea required name="name" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Artur"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Write you phone number:</label>
+        <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="+380 000000000000">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">City</label>
+        <textarea required name="name" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Kiev"></textarea>
+    </div>
+    <button type="submit" class="btn btn-light my-btn">End</button>
+    
+</form>
+
+{% endblock content %}
