@@ -12,7 +12,7 @@
                 <p class="card-text">{{item[5]}} USD</p>
                 <p class="card-size">{{item[6]}} Size</p>
                 <p class="card-idies">{{item[7]}} ID/IDies</p>
-                <a href="{{url_for('pizza', pizza_id=item[0])}}" class="btn btn-outline-dar">Buy</a>
+                <a href="{{url_for('order_pizza', pizza_id=item[0])}}" class="btn btn-outline-dar">Buy</a>
             </div>
         </div> 
     {% endfor %}

@@ -13,7 +13,7 @@
         <h5>size: {{pizza[6]}}</h5>
         <h5>ID/IDIES {{pizza[7]}}</h5>
         <h5>About: {{pizza[3]}}</h5>
-        <a class="btn btn-primary" href="new_order_pizza.html" role="button">Buy</a>
+        <a class="btn btn-primary" href="{{ url_for('order_pizza', pizza_id = pizza[0]) }}" role="button">Buy</a>
     </div>
     </div>
 </div>
