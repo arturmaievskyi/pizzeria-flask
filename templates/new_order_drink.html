@@ -17,25 +17,34 @@
     </div>
 </div>
 
-<form action="" method="post">
-    <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Write your name:</label>
-        <textarea required name="name" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Artur"></textarea>
+<div class="row">
+    <div class="col-12 col-md-8 my-5">
+        <form action="" method="post">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Name</label>
+                <input required name="name" type="text" class="form-control" id="exampleFormControlInput1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email</label>
+                <input required name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Mobile Phone</label>
+                <input required name="phone" type="tel" class="form-control" id="exampleFormControlInput1" placeholder="+380(00)000000">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Your city</label>
+                <input required name="city" type="text" class="form-control" id="exampleFormControlInput1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Adress to order</label>
+                <input required name="address" type="text" class="form-control" id="exampleFormControlInput1">
+            </div>
+            <button type="submit" class="btn btn-light my-btn">End new order</button>
+
+        </form>
     </div>
-    <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-    </div>
-    <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Write you phone number:</label>
-        <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="+380 000000000000">
-    </div>
-    <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">City</label>
-        <textarea required name="name" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Kiev"></textarea>
-    </div>
-    <button type="submit" class="btn btn-light my-btn">End</button>
-    
-</form>
+</div>
 
 {% endblock content %}

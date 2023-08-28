@@ -34,3 +34,14 @@
 .card-body{
     background-color: white;
 }
+.links{
+    background-color: wheat;
+}
+.text{
+    color: azure;
+}
+.all{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: inherit;
+    
+}

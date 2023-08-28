@@ -30,8 +30,7 @@ class ShopDB_Pizzas:
     
     def add_order_pizza(self, *data):
         self.open_pizzas()
-        self.cursor.execute('''INSERT INTO orders (item_id, name, phone, email, city, address, cost)
-                            VALUES((?), (?), (?), (?), (?), (?), (?))''', [*data])
+        self.cursor.execute('''INSERT INTO orders (item_id, name, phone, email, city, address, cost) VALUES((?), (?), (?), (?), (?), (?), (?))''', [*data])
         self.conn.commit()
         self.close_pizzas()
 
@@ -78,8 +77,7 @@ class ShopDB_Drinks:
         return data_one_drink
     def add_order_drink(self, *data):
         self.open_drinks()
-        self.cursor.execute('''INSERT INTO orders (item_id, name, phone, email, city, address, cost)
-                            VALUES((?), (?), (?), (?), (?), (?), (?))''', [*data])
+        self.cursor.execute('''INSERT INTO orders (item_id, name, phone, email, city, address, cost) VALUES((?), (?), (?), (?), (?), (?), (?))''', [*data])
         self.conn.commit()
         self.close()
 

@@ -3,6 +3,7 @@
 <title>{{title}}</title>
 {% endblock head %}
 {% block content %}
+
      <h1 class="my-5" style="text-align: center;">Online Pizzeria</h1>
           {% for type, message in get_flashed_messages(True) %}
                <div class="alert {{type}} my-3 "> {{message}} </div>
