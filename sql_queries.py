@@ -77,7 +77,9 @@ class ShopDB_Drinks:
         return data_one_drink
     def add_order_drink(self, *data):
         self.open_drinks()
-        self.cursor.execute('''INSERT INTO order (category_id, phone, name, email, city, status, cost) VALUES((?), (?), (?), (?), (?), (?), (?))''', [*data])
+        self.cursor.execute('''INSERT INTO order 
+                        (drink_id, phone, name, email, city, cost)
+                        VALUES((?), (?), (?), (?), (?), (?))''', [*data])
         self.conn.commit()
         self.close()
 
