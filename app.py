@@ -6,9 +6,6 @@ from sql_queries import*
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = SECRET_KEY 
-
-#________________________________________________________________________________________#
-
 db_pizzas = ShopDB_Pizzas()
 db_drinks = ShopDB_Drinks()
 
@@ -24,13 +21,13 @@ def pizzaria():
     return render_template('index.html', title="Online Pizzaria", pizzas = pizzas_obj, drinks = drinks_obj)
 
 
-@app.route("/pizza/<pizza_id>")
+@app.route("/pizza/<pizza_id>.html")
 def pizza(pizza_id):
     pizza_obj = db_pizzas.get_pizza(pizza_id)
     return render_template('own_pizza.html', title="Online Pizzeria", pizza = pizza_obj)
 
 
-@app.route("/drink/<drink_id>")
+@app.route("/drink/<drink_id>.html")
 def drink(drink_id):
     drink_obj = db_drinks.get_drink(drink_id)
     return render_template('own_drink.html', title="Online Pizzeria", drink = drink_obj)
@@ -49,28 +46,26 @@ def drinkPage():
     print(drink_obj)
     return render_template('drink.html',title="Online Pizzeria",  drinks = drink_obj)
 
-@app.route("/templates/pizza/<pizza_id>", methods = ["GET", "POST"])
+@app.route("/templates/pizza/<pizza_id>.html", methods = ["GET", "POST"])
 def order_pizza(pizza_id):
     pizza_obj = db_pizzas.get_pizza(pizza_id)
-    def get_order():
-        if request.method == 'POST':
-            try:
-                db_pizzas.add_order_pizza(pizza_obj[0], 
-                        request.form["name"],
-                        request.form["email"],
-                        request.form["phone"],
-                        request.form["city"],
-                        request.form["address"], 
-                            pizza_obj[5])
-                flash("New order was given!", "alert-light") #надсилаємо швидкі сповіщення у браузер
-                return redirect(url_for(render_template("/templates/index.html"))) #перенаправляємо на головну сторінку
-            except:
-                flash("Fail to make!", "alert-danger") #надсилаємо швидкі сповіщення у браузер
-                return redirect(url_for("pizzaria"))
-    get_order() 
+    if request.method == 'POST':
+        try:
+            db_pizzas.add_order_pizza(pizza_obj[0], 
+                    request.form["name"],
+                    request.form["email"],
+                    request.form["phone"],
+                    request.form["city"],
+                    request.form["address"], 
+                        pizza_obj[5])
+            flash("New order was given!", "alert-light") #надсилаємо швидкі сповіщення у браузер
+            return redirect(url_for("pizzaria")) #перенаправляємо на головну сторінку
+        except:
+            flash("Fail to make!", "alert-danger") #надсилаємо швидкі сповіщення у браузер
+            return redirect(url_for("pizzaria"))
     return render_template('new_order_pizza.html', title="Online Pizzeria", pizza = pizza_obj)
 
-@app.route("/templates/drink/<drink_id>", methods = ["GET", "POST"])
+@app.route("/templates/drink/<drink_id>.html", methods = ["GET", "POST"])
 def order_drink(drink_id):
     drink_obj = db_drinks.get_drink(drink_id)
     if request.method == 'POST':
@@ -89,12 +84,12 @@ def order_drink(drink_id):
     return render_template('new_order_drink.html', title="Online Pizzeria", drink = drink_obj)
 
 
-@app.route("/templates/support_me")
-def support():
-    return render_template("suppoort_me.html")
+@app.route("/templates/suppoort_me.html")
+def support_me():
+    return render_template("suppoort_me.html", title="Online Pizzeria")
 
 @app.route("/templates/about.html")
-def About():
+def about():
     return render_template("about.html", title="Online Pizzeria")
 
 

@@ -1,26 +1,30 @@
-{% include "base.html" %}
+{% extends 'base.html' %}
 {% block content %}
-        <div class="content">
-            <div class="text">
-                <p>
-                    you can me suppot on:
-                    <ul>
-                        <li>Youtube</li>
-                        <li>GitHub</li>
-                    </ul>
-                </p>
+            <div class="content">
+                <div class="text">
+                    <p>
+                        you can me suppot on:
+                        <ul>
+                            <li>Youtube</li>
+                            <li>GitHub</li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="links">
+                    <p>Youtube</p>
+                    <a href="https://www.youtube.com/@JUJ_ORIGINAL">CLICK ME!</a>
+                    <p>GitHub</p>
+                    <a href="https://github.com/arturmaievskyi"> CLICK ME!!</a>
+                </div>
+                <div class="other">
+                    <p>
+                        if you will more projects,<br>
+                        follow me on GitHub
+                    </p>
+                </div>
+                <div class="writeMe">
+                    <p>If you will write me, you can writ me on Telegram(IF YOU HAVE ANY IDEA)</p>
+                    <a href="https://t.me/JUJ_ORIGINAL">CLICK ME!!</a>
+                </div>
             </div>
-            <div class="links">
-                <p>Youtube</p>
-                <a href="https://www.youtube.com/@JUJ_ORIGINAL">CLICK ME!</a>
-                <p>GitHub</p>
-                <a href="https://github.com/arturmaievskyi"> Click ME!!</a>
-            </div>
-            <div class="other">
-                <p>
-                    if you will more projects,<br>
-                    follow me on GitHub
-                </p>
-            </div>
-        </div>
-{% endblock %}
+{% endblock content %}

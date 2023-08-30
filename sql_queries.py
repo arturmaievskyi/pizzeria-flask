@@ -77,7 +77,7 @@ class ShopDB_Drinks:
         return data_one_drink
     def add_order_drink(self, *data):
         self.open_drinks()
-        self.cursor.execute('''INSERT INTO orders (item_id, name, phone, email, city, address, cost) VALUES((?), (?), (?), (?), (?), (?), (?))''', [*data])
+        self.cursor.execute('''INSERT INTO order (category_id, phone, name, email, city, status, cost) VALUES((?), (?), (?), (?), (?), (?), (?))''', [*data])
         self.conn.commit()
         self.close()
 
@@ -91,7 +91,7 @@ class ShopDB_Drinks:
 
     def get_category_drinks(self, id):
         self.open_drinks()
-        self.cursor.execute("SELECT * FROM items WHERE category_id==(?)", [id])
+        self.cursor.execute("SELECT * FROM drink WHERE category_id==(?)", [id])
         data = self.cursor.fetchall()
         self.close()
         return data

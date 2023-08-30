@@ -36,3 +36,8 @@ body{
     background-color: aquamarine;
     border-radius: 10%;
 }
+.content{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: inherit;
+    font-size: larger;
+}
