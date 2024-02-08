@@ -48,6 +48,8 @@ class ShopDB_Pizzas:
         data = self.cursor.fetchall()
         self.close_pizzas()
         return data
+    
+    
 class ShopDB_Drinks:
     def __init__(self):
         self.conn = None
@@ -77,9 +79,7 @@ class ShopDB_Drinks:
         return data_one_drink
     def add_order_drink(self, *data):
         self.open_drinks()
-        self.cursor.execute('''INSERT INTO order 
-                        (drink_id, phone, name, email, city, cost)
-                        VALUES((?), (?), (?), (?), (?), (?))''', [*data])
+        self.cursor.execute('''INSET INTO order (drink_id, phone, name, email, city, cost) VALUES((?), (?), (?), (?), (?), (?))''', [*data])
         self.conn.commit()
         self.close()
 
